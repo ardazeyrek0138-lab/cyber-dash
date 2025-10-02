@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-DASH | Neon Admin Template</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    <aside id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="brand-link">
+                <i class="fas fa-microchip brand-icon"></i>
+                <span class="brand-text">CYBER-DASH</span>
+            </a>
+        </div>
+        
+     <nav class="sidebar-nav">
+            
+            <ul>
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="analytics.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Veri Analizi</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tables.html" class="nav-link">
+                        <i class="fas fa-table"></i>
+                        <span>Tablolar</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="forms.html" class="nav-link">
+                        <i class="fas fa-edit"></i>
+                        <span>Form Girişi</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="components.html" class="nav-link">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Bileşenler</span>
+                        
+                    </a>
+                </li>
+    
+    <li class="nav-item">
+        <a href="settings.html" class="nav-link">
+            <i class="fas fa-cog"></i> <span>Ayarlar</span>
+        </a>
+    </li>
+
+    </ul>
+        </nav>
+    </aside>
+
+    <div id="main-wrapper">
+        
+      <header id="topbar">
+    <button class="cyber-toggle" id="menu-toggle"> 
+        <i class="fas fa-bars"></i>
+    </button>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Cyber-Dash'te arama yapın..." class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <div class="header-actions">
+                <a href="#" class="action-item" data-count="3">
+                    <i class="fas fa-bell"></i>
+                </a>
+                <a href="#" class="action-item" data-count="1">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                <div class="user-profile">
+                    <span class="user-name">Cypher-User</span>
+                    <i class="fas fa-user-circle profile-avatar"></i> 
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+           <h1 class="main-title">Kullanıcı & Tema Ayarları</h1>
+<p class="text-muted mb-5">Panelinizin görünümünü ve temel kullanıcı bilgilerinizi yönetin.</p>
+
+<div class="row">
+
+    <div class="col-lg-6 mb-4">
+        <div class="stat-card p-4" data-neon="purple">
+            <h5 class="chart-title mb-4">Profil Bilgilerini Güncelle</h5>
+            
+            <form>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Kullanıcı Adı</label>
+                    <input type="text" class="cyber-input" id="userName" value="Cypher-User">
+                </div>
+                <div class="mb-3">
+                    <label for="userEmail" class="form-label">E-posta</label>
+                    <input type="email" class="cyber-input" id="userEmail" value="user@cyberdash.com">
+                </div>
+                <div class="d-grid mt-4">
+                    <button type="submit" class="cyber-btn primary">Bilgileri Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="stat-card p-4" data-neon="blue">
+            <h5 class="chart-title mb-4">Tema ve Renk Ayarları</h5>
+            
+            <div class="mb-4">
+                <label class="form-label">Neon Ana Renk Seçimi</label>
+                <div class="color-options mt-2">
+                    
+                    <button class="color-swatch blue active" data-color="blue" title="Mavi Neon"></button>
+                    <button class="color-swatch purple" data-color="purple" title="Mor Neon"></button>
+                    <button class="color-swatch green" data-color="green" title="Yeşil Neon"></button>
+                    <button class="color-swatch red" data-color="red" title="Kırmızı Neon"></button>
+                    
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Arayüz Yoğunluğu</label>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="darkToggle" checked>
+                    <label class="form-check-label text-muted" for="darkToggle">Karanlık Modu Kullan (Koyu)</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+        </main>
+        
+        <footer class="footer">
+            <div class="container-fluid">
+                <p>&copy; 2025 CYBER-DASH. Tüm hakları saklıdır.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/custom.js"></script> 
+
+</body>
+</html>
