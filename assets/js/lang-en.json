@@ -1,9 +1,23 @@
 {
+  "page_title_dashboard": "Dashboard Overview",
+  "page_title_settings": "Settings",
+  
   "menu_dashboard": "Dashboard",
+  "menu_analytics": "Analytics",
   "menu_tables": "Tables",
-  "settings_language_title": "Language Settings", <--- YENİ EKLENECEK
-  "settings_language_select": "Select Language", <--- YENİ EKLENECEK
-  "button_save": "Save Changes" 
-  "alert_success_lang_change": "Language switched successfully!" <--- YENİ EKLENECEK
-  // ... diğer anahtarlar
+  "menu_forms": "Forms",
+  "menu_components": "Components",
+  "menu_settings": "Settings",
+  "header_profile": "Profile",
+  
+  "card_realtime_users": "Real-Time Users",
+  "card_text_increase": "+15% since last week",
+  
+  "settings_language_title": "Language Settings",
+  "settings_language_select": "Select Language",
+  
+  "button_save": "Save Changes",
+  
+  "alert_success_lang_change": "Language switched successfully!",
+  "footer_copyright": "&copy; 2025 CYBER-DASH. All rights reserved."
 }
