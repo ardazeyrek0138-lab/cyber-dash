@@ -4,7 +4,7 @@ let translations = {};
 // 1. Çeviri JSON dosyasını yükler
 async function loadTranslations(lang) {
     try {
-        const response = await fetch(`./assets/js/lang-${lang}.json`); 
+        const response = await fetch(`assets/js/lang-${lang}.json`); 
         
         if (!response.ok) {
             throw new Error(`Failed to load translation file for ${lang}`);
