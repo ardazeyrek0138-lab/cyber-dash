@@ -1,13 +1,9 @@
-const defaultLang = 'en';
+const defaultLang = 'en'; // Tema yüklenirken varsayılan dil
 let translations = {};
 
-// Yeni çeviri anahtarı için boş bir global değişken tanımlıyoruz
-let currentLangCode = defaultLang; 
-
 // 1. Çeviri JSON dosyasını yükler
-async function loadTranslations(lang, showSuccess = false) { // showSuccess parametresi eklendi
+async function loadTranslations(lang) {
     try {
-        currentLangCode = lang; // Dil kodunu güncelliyoruz
         const response = await fetch(`./assets/js/lang-${lang}.json`); 
         
         if (!response.ok) {
@@ -15,52 +11,43 @@ async function loadTranslations(lang, showSuccess = false) { // showSuccess para
         }
         
         translations = await response.json();
-        applyTranslations();
-
-        // Eğer başarılı mesajı gösterilmesi gerekiyorsa (yani dil yeni değiştiyse)
-        if (showSuccess) {
-            // Başarılı mesajı anahtarını kullanarak çeviriyoruz
-            const successMessage = translations['alert_success_lang_change'] || 'Language switched successfully!'; 
-            alert(successMessage);
-        }
-
+        applyTranslations(); // Yüklendikten sonra çeviriyi hemen uygula
     } catch (error) {
         console.error("Translation Error:", error);
     }
 }
 
-// 2. HTML elemanlarına data-i18n anahtarına göre çeviriyi uygular (Değişmedi)
+// 2. data-i18n özniteliği olan tüm elemanlara çeviriyi uygular
 function applyTranslations() {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         
         if (translations[key]) {
-            element.innerHTML = translations[key];
+            element.innerHTML = translations[key]; // HTML içeriğini çeviri ile değiştir
         }
     });
 }
 
-// 3. Ayarlar sayfasındaki dil seçiciyi dinler (Değişti)
+// 3. Ayarlar sayfasındaki dil seçiciyi dinler
 function setupLanguageSwitcher() {
     const switcher = document.getElementById('language-selector');
     if (switcher) {
         switcher.addEventListener('change', (event) => {
             const selectedLang = event.target.value;
             localStorage.setItem('lang', selectedLang); 
-            
-            // Başarılı mesajı göstermek için ikinci parametreyi 'true' yaptık
-            loadTranslations(selectedLang, true); 
+            loadTranslations(selectedLang); // Yeni dili yükle
         });
         
+        // Dil seçiciye geçerli seçimi yükle
         const storedLang = localStorage.getItem('lang') || defaultLang;
         switcher.value = storedLang;
     }
 }
 
-// 4. Tema ilk yüklendiğinde otomatik çalışan ana fonksiyon (Değişmedi)
+// 4. Tema ilk yüklendiğinde otomatik çalışan ana fonksiyon
 document.addEventListener('DOMContentLoaded', () => {
     const storedLang = localStorage.getItem('lang') || defaultLang; 
     
-    loadTranslations(storedLang); 
-    setupLanguageSwitcher(); 
+    loadTranslations(storedLang); // Dili yükle
+    setupLanguageSwitcher(); // Dil seçiciyi hazırla
 });
