@@ -29,35 +29,30 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a href="analytics.html" class="nav-link" data-i18n="menu_analytics">
                         <i class="fas fa-chart-line"></i> 
                         <span>Analytics</span>
                     </a>
                 </li>
-                
                 <li class="nav-item">
                     <a href="tables.html" class="nav-link" data-i18n="menu_tables">
                         <i class="fas fa-table"></i>
                         <span>Tables</span>
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a href="forms.html" class="nav-link" data-i18n="menu_forms">
                         <i class="fas fa-keyboard"></i>
                         <span>Forms</span>
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a href="components.html" class="nav-link" data-i18n="menu_components">
                         <i class="fas fa-cube"></i> 
                         <span>Components</span>
                     </a>
                 </li>
-                
                 <li class="nav-item">
                     <a href="settings.html" class="nav-link" data-i18n="menu_settings">
                         <i class="fas fa-cogs"></i> 
@@ -76,13 +71,13 @@
             </button>
             
             <div class="search-box">
-                <input type="text" placeholder="Cyber-Dash'te arama yapın..." class="search-input" data-i18n-placeholder="header_search_placeholder"> 
+                <input type="text" placeholder="Cyber-Dash'te arama yapın..." class="search-input" data-i18n-placeholder="header_search_placeholder">
                 <i class="fas fa-search search-icon"></i>
             </div>
             
             <div class="header-actions">
-                <a href="#" class="action-item" data-count="3"><i class="fas fa-bell"></i></a>
-                <a href="#" class="action-item" data-count="1"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="action-item" data-count="3" data-i18n-title="header_notifications_title"><i class="fas fa-bell"></i></a>
+                <a href="#" class="action-item" data-count="1" data-i18n-title="header_messages_title"><i class="fas fa-envelope"></i></a>
                 
                 <div class="user-profile">
                     <span class="user-name" data-i18n="header_username">Cypher-User</span>
@@ -92,39 +87,45 @@
         </header>
 
         <main class="page-content">
-            <h1 class="main-title" data-i18n="page_title_dashboard">Dashboard Overview</h1>
-            <p class="text-muted mb-5" data-i18n="dashboard_subtitle">Kritik sistem metriklerine ve güncel duruma genel bakış.</p>
             
+            <h1 class="main-title" data-i18n="page_title_dashboard">Genel Durum Analizi</h1>
+            <p class="text-muted mb-5" data-i18n="dashboard_subtitle">Tüm kritik verilerinizin hızlı bir özeti.</p>
+
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card p-4" data-neon="blue">
-                        <h5 class="chart-title mb-2" data-i18n="card_realtime_users">Real-Time Users</h5>
-                        <div class="stat-value">1,450</div>
-                        <p class="text-success stat-change" data-i18n="card_text_increase">+15% since last week</p>
+                    <div class="stat-card" data-neon="purple">
+                        <i class="stat-icon fas fa-users"></i>
+                        <div class="stat-info">
+                            <h3 class="stat-value">12,450</h3>
+                            <p class="stat-label" data-i18n="stat_total_users">Toplam Kullanıcı</p>
+                        </div>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card p-4" data-neon="purple">
-                        <h5 class="chart-title mb-2" data-i18n="card_total_sales">Total Sales</h5>
-                        <div class="stat-value">$125,890</div>
-                        <p class="text-danger stat-change" data-i18n="card_text_decrease">-5% from last month</p>
+                    <div class="stat-card" data-neon="green">
+                        <i class="stat-icon fas fa-shield-alt"></i>
+                        <div class="stat-info">
+                            <h3 class="stat-value">98.5%</h3>
+                            <p class="stat-label" data-i18n="stat_security_score">Güvenlik Skoru</p>
+                        </div>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card p-4" data-neon="green">
-                        <h5 class="chart-title mb-2" data-i18n="card_new_registrations">New Registrations</h5>
-                        <div class="stat-value">3,204</div>
-                        <p class="text-success stat-change" data-i18n="card_text_new">+250 today</p>
+                    <div class="stat-card" data-neon="blue">
+                        <i class="stat-icon fas fa-project-diagram"></i>
+                        <div class="stat-info">
+                            <h3 class="stat-value">45</h3>
+                            <p class="stat-label" data-i18n="stat_active_projects">Aktif Projeler</p>
+                        </div>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card p-4" data-neon="red">
-                        <h5 class="chart-title mb-2" data-i18n="card_server_load">Server Load</h5>
-                        <div class="stat-value">78%</div>
-                        <p class="text-warning stat-change" data-i18n="card_text_warning">High usage peak</p>
+                    <div class="stat-card" data-neon="red">
+                        <i class="stat-icon fas fa-bug"></i>
+                        <div class="stat-info">
+                            <h3 class="stat-value">12</h3>
+                            <p class="stat-label" data-i18n="stat_open_issues">Açık Sorunlar</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,15 +133,59 @@
             <div class="row">
                 <div class="col-lg-8 mb-4">
                     <div class="stat-card p-4" data-neon="blue">
-                        <h5 class="chart-title mb-4" data-i18n="chart_title_activity">Monthly Activity Analysis</h5>
-                        <canvas id="monthlyActivityChart" height="150"></canvas>
+                        <h5 class="chart-title" data-i18n="chart_traffic_title">Aylık Ağ Trafiği</h5>
+                        <canvas id="trafficChart" style="max-height: 350px;"></canvas>
                     </div>
                 </div>
                 
                 <div class="col-lg-4 mb-4">
                     <div class="stat-card p-4" data-neon="purple">
-                        <h5 class="chart-title mb-4" data-i18n="chart_title_traffic">Traffic Source</h5>
-                        <canvas id="trafficSourceChart" height="200"></canvas>
+                        <h5 class="chart-title" data-i18n="chart_status_title">Sistem Durumu</h5>
+                        <canvas id="statusChart" style="max-height: 350px;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="stat-card p-4" data-neon="green">
+                        <h5 class="chart-title mb-4" data-i18n="table_recent_transactions_title">Son İşlemler</h5>
+                        <div class="table-responsive">
+                            <table class="table cyber-table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="table_header_id">İşlem ID</th>
+                                        <th data-i18n="table_header_type">Tip</th>
+                                        <th data-i18n="table_header_user">Kullanıcı</th>
+                                        <th data-i18n="table_header_amount">Miktar</th>
+                                        <th data-i18n="table_header_date">Tarih</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TXN-87421</td>
+                                        <td data-i18n="transaction_type_deposit">Yatırma</td>
+                                        <td>Cypher-User-1</td>
+                                        <td>+ $1,200</td>
+                                        <td>2025-10-01</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TXN-87422</td>
+                                        <td data-i18n="transaction_type_transfer">Transfer</td>
+                                        <td>NeonDev</td>
+                                        <td>- $250</td>
+                                        <td>2025-10-01</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TXN-87423</td>
+                                        <td data-i18n="transaction_type_withdrawal">Çekme</td>
+                                        <td>DarkModeFan</td>
+                                        <td>- $50</td>
+                                        <td>2025-09-30</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,16 +198,62 @@
             </div>
         </footer>
     </div>
-</div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    
+    <script src="assets/js/custom.js"></script> 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="assets/js/i18n.js"></script> 
 
-<script src="assets/js/custom.js"></script> 
+    <script>
+        var trafficCtx = document.getElementById('trafficChart');
+        if (trafficCtx) {
+            new Chart(trafficCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+                    datasets: [{
+                        label: 'Gelen Trafik (MB)',
+                        data: [65, 59, 80, 81, 56, 55, 40, 75, 88, 62, 70, 95],
+                        borderColor: 'rgba(54, 162, 235, 1)', 
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
 
-<script src="assets/js/i18n.js"></script> 
-
+        var statusCtx = document.getElementById('statusChart');
+        if (statusCtx) {
+            new Chart(statusCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['CPU Kullanımı', 'RAM Kullanımı', 'Boş Alan'],
+                    datasets: [{
+                        data: [30, 45, 25], 
+                        backgroundColor: ['#ff6384', '#36a2eb', '#4bc0c0'], 
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+    </script>
+    
 </body>
 </html>
