@@ -1,16 +1,36 @@
-{
-  "menu_dashboard": "Dashboard",
-  "menu_tables": "Tables",
-  "menu_settings": "Settings",
-  "menu_forms": "Forms",
-  "menu_components": "Components",
-  "header_profile": "Profile"
+const defaultLang = 'en';
+let translations = {};
+
+async function loadTranslations(lang) {
+    // Doğru JSON dosyasını yüklüyoruz:
+    const response = await fetch(`./assets/js/lang-${lang}.json`); 
+    translations = await response.json();
+    applyTranslations();
 }
-{
-  "menu_dashboard": "Anasayfa",
-  "menu_tables": "Tablolar",
-  "menu_settings": "Ayarlar",
-  "menu_forms": "Formlar",
-  "menu_components": "Bileşenler",
-  "header_profile": "Profil"
+
+function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[key]) {
+            // Burada HTML içeriğini çeviri ile değiştiriyoruz
+            element.innerHTML = translations[key]; 
+        }
+    });
 }
+
+function setupLanguageSwitcher() {
+    const switcher = document.getElementById('language-selector');
+    if (switcher) {
+        switcher.addEventListener('change', (event) => {
+            const selectedLang = event.target.value;
+            localStorage.setItem('lang', selectedLang);
+            loadTranslations(selectedLang);
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const storedLang = localStorage.getItem('lang') || defaultLang;
+    loadTranslations(storedLang);
+    setupLanguageSwitcher();
+});
