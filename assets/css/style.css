@@ -1,177 +1,135 @@
-/* ========================================= */
-/* TEMEL CYBER-DASH GENEL STİLLERİ */
-/* ========================================= */
-
-:root {
-    --color-neon-purple: #bd93f9;
-    --color-neon-blue: #8be9fd;
-    --color-neon-green: #50fa7b;
-    --color-neon-red: #ff5555;
-    --color-dark-bg: #0d1117;
-    --color-dark-card: #161b22;
-    --color-border: #21262d;
-    --color-text-main: #e6edf3;
-    --color-text-muted: #8b949e;
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: var(--color-dark-bg); 
-    color: var(--color-text-main);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.5;
 }
 
-.wrapper {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
+a {
+  text-decoration: none;
+  color: #007bff;
 }
 
-#main-wrapper {
-    flex-grow: 1;
-    transition: margin-left 0.3s;
-    padding-top: 60px; /* Topbar yüksekliği */
-    display: flex;
-    flex-direction: column;
+a:hover {
+  text-decoration: underline;
 }
 
-.page-content {
-    flex-grow: 1;
-    padding: 20px 30px;
-}
-
-/* ========================================= */
-/* SIDEBAR (YAN MENÜ) STİLLERİ */
-/* ========================================= */
-
-#sidebar {
-    width: 250px;
-    background: var(--color-dark-card); 
-    transition: all 0.3s;
-    position: fixed;
-    height: 100%;
-    z-index: 1030;
-    overflow-y: auto;
-}
-
-/* Sidebar gizlendiğinde (custom.js tarafından 'toggled' sınıfı eklenir) */
-#sidebar.toggled {
-    margin-left: -250px;
-}
-#main-wrapper.sidebar-toggled {
-    margin-left: 0;
-}
-#topbar.sidebar-toggled {
-    left: 0;
-}
-
-.sidebar-header {
-    padding: 20px 20px;
-    border-bottom: 1px solid var(--color-border);
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f2e;
+  color: #fff;
+  padding: 1rem;
 }
 
 .brand-link {
-    color: var(--color-text-main);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
-.brand-icon {
-    color: var(--color-neon-blue);
-    margin-right: 10px;
+.top-actions select,
+.top-actions button {
+  margin-left: 0.5rem;
 }
 
-.sidebar-nav ul {
-    padding: 0;
-    list-style: none;
+.page-content {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
-.sidebar-nav .nav-link {
-    padding: 10px 20px;
-    color: var(--color-text-main);
-    display: block;
-    text-decoration: none;
-    transition: all 0.2s;
-    border-left: 3px solid transparent;
+h2 {
+  margin-bottom: 1rem;
 }
 
-.sidebar-nav .nav-link:hover {
-    background: rgba(var(--color-neon-blue), 0.1);
-    color: var(--color-neon-blue);
-    border-left: 3px solid var(--color-neon-blue);
+.auth-page, .form-section, .table-section, .settings-section, .analytics-section, .components-section, .error-page {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
 }
 
-/* ACTIVE LİNK STİLİ (menü sorununun çözümü) */
-.sidebar-nav .nav-item.active .nav-link {
-    color: var(--color-neon-blue);
-    background: rgba(139, 233, 253, 0.1); 
-    border-left: 3px solid var(--color-neon-blue);
-    font-weight: 600;
-    box-shadow: inset 0 0 10px rgba(139, 233, 253, 0.2); 
+.auth-form label,
+.auth-form input,
+.auth-form select,
+.auth-form textarea,
+.auth-form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.sidebar-nav .nav-link i {
-    margin-right: 15px;
-    font-size: 1.1rem;
+.auth-form input,
+.auth-form select,
+.auth-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-/* ========================================= */
-/* TOPBAR (ÜST ÇUBUK) STİLLERİ */
-/* ========================================= */
-#topbar {
-    position: fixed;
-    top: 0;
-    left: 250px; /* Sidebar genişliği kadar içeriden başla */
-    right: 0;
-    height: 60px;
-    background: var(--color-dark-card);
-    border-bottom: 1px solid var(--color-border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 1031;
-    transition: left 0.3s;
+.btn {
+  background: #007bff;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
-.cyber-toggle {
-    background: none;
-    border: none;
-    color: var(--color-neon-blue);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: color 0.2s;
+.btn:hover {
+  background: #0056b3;
 }
 
-/* ========================================= */
-/* KARTLAR VE NEON EFEKTLERİ */
-/* ========================================= */
-.stat-card {
-    background: var(--color-dark-card);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 0 0 transparent; /* Başlangıç gölgesi */
-    transition: all 0.3s ease;
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
 }
 
-.stat-card:hover {
-    transform: translateY(-2px);
+.table th, .table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
 }
 
-/* Neon Gölge Efektleri */
-.stat-card[data-neon="purple"] {
-    box-shadow: 0 0 15px rgba(var(--color-neon-purple), 0.3);
+.table th {
+  background: #f0f0f0;
 }
-.stat-card[data-neon="blue"] {
-    box-shadow: 0 0 15px rgba(var(--color-neon-blue), 0.3);
-}
-/* ... diğer neon renkler ... */
 
-/* ... Diğer tüm tablo, form, footer ve buton stilleriniz buraya eklenmelidir. */
-/* Eğer o stilleriniz çalışıyorsa, bu temel yapısal CSS, sidebar ve topbar sorunlarını çözecektir. */
+.site-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 2rem;
+}
+
+.noscript-warning {
+  background: #ffc;
+  color: #333;
+  padding: 1rem;
+  border: 1px solid #ffa;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-content {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
