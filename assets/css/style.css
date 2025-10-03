@@ -825,4 +825,21 @@ body.login-page {
     background-color: #1a1a1a; /* Seçenek arka planını da koyu yap */
     color: #e0e0e0;
 }
+/* Dil Seçimi Kartındaki Parçalanmayı Düzeltme */
+.card-header .card-title[data-i18n] {
+    white-space: nowrap; /* Başlığın tek satırda kalmasını sağlar */
+    display: inline-block; /* Elementin düzgün hizalanmasını sağlar */
+}
+
+/* Form Seçim Kutusu için Neon Uyumunu Güçlendirme */
+.form-select#language-selector {
+    background-color: #1a1a1a !important; 
+    color: #00c7e5 !important; /* Metin rengi neon mavi */
+    border: 1px solid #00c7e5 !important; 
+}
+.form-select#language-selector option {
+    background-color: #1a1a1a;
+    color: #00c7e5;
+}
+
 
