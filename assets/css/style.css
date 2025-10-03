@@ -812,4 +812,11 @@ body.login-page {
 .form-switch .form-check-input:checked {
     background-color: var(--neon-blue);
     border-color: var(--neon-blue);
+
+}
+/* Dil Seçme Kutusu için ek stil */
+#language-selector {
+    background-color: #333; /* Koyu arka plan rengi */
+    color: #fff; /* Beyaz yazı rengi */
+    border: 1px solid var(--neon-blue); /* Neon çerçeve */
 }
