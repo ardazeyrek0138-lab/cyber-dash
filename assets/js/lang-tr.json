@@ -1,12 +1,23 @@
 {
-  "menu_dashboard": "Anasayfa",
-  "menu_tables": "Tablolar",
-  "menu_settings": "Ayarlar",
-  // ... diğer menü anahtarları
+  "page_title_dashboard": "Anasayfa Genel Bakış",
+  "page_title_settings": "Ayarlar",
 
-  // Ayarlar sayfası için eklediğiniz anahtarlar da burada olmalı:
+  "menu_dashboard": "Anasayfa",
+  "menu_analytics": "Veri Analizi",
+  "menu_tables": "Tablolar",
+  "menu_forms": "Form Girişi",
+  "menu_components": "Bileşenler",
+  "menu_settings": "Ayarlar",
+  "header_profile": "Profil",
+  
+  "card_realtime_users": "Gerçek Zamanlı Kullanıcılar",
+  "card_text_increase": "Geçen haftadan bu yana +%15 artış",
+  
   "settings_language_title": "Dil Ayarları",
   "settings_language_select": "Dili Seçiniz",
+  
   "button_save": "Değişiklikleri Kaydet",
-  "alert_success_lang_change": "Dil başarıyla değiştirildi!"
+  
+  "alert_success_lang_change": "Dil başarıyla değiştirildi!",
+  "footer_copyright": "&copy; 2025 CYBER-DASH. Tüm hakları saklıdır."
 }
