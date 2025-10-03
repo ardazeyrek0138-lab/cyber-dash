@@ -1,259 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page_title_dashboard">CYBER-DASH | Dashboard</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CYBER-DASH | Dashboard</title>
+  <meta name="description" content="CYBER-DASH kullanıcı paneli ve sistem analizi dashboard demo." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="CYBER-DASH | Dashboard" />
+  <meta property="og:description" content="CYBER-DASH kullanıcı paneli ve sistem analizi dashboard demo." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">İçeriğe atla</a>
 
-<div class="wrapper">
-    
-    <aside id="sidebar">
-        <div class="sidebar-header">
-            <a href="index.html" class="brand-link">
-                <i class="fas fa-microchip brand-icon"></i>
-                <span class="brand-text">CYBER-DASH</span>
-            </a>
-        </div>
-
-        <nav class="sidebar-nav">
-            <ul>
-                <li class="nav-item active"> 
-                    <a href="index.html" class="nav-link" data-i18n="menu_dashboard">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="analytics.html" class="nav-link" data-i18n="menu_analytics">
-                        <i class="fas fa-chart-line"></i> 
-                        <span>Analytics</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="tables.html" class="nav-link" data-i18n="menu_tables">
-                        <i class="fas fa-table"></i>
-                        <span>Tables</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="forms.html" class="nav-link" data-i18n="menu_forms">
-                        <i class="fas fa-keyboard"></i>
-                        <span>Forms</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="components.html" class="nav-link" data-i18n="menu_components">
-                        <i class="fas fa-cube"></i> 
-                        <span>Components</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="settings.html" class="nav-link" data-i18n="menu_settings">
-                        <i class="fas fa-cogs"></i> 
-                        <span>Settings</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-
-    <div id="main-wrapper">
-        
-        <header id="topbar">
-            <button class="cyber-toggle" id="menu-toggle"> 
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <div class="search-box">
-                <input type="text" placeholder="Cyber-Dash'te arama yapın..." class="search-input" data-i18n-placeholder="header_search_placeholder">
-                <i class="fas fa-search search-icon"></i>
-            </div>
-            
-            <div class="header-actions">
-                <a href="#" class="action-item" data-count="3" data-i18n-title="header_notifications_title"><i class="fas fa-bell"></i></a>
-                <a href="#" class="action-item" data-count="1" data-i18n-title="header_messages_title"><i class="fas fa-envelope"></i></a>
-                
-                <div class="user-profile">
-                    <span class="user-name" data-i18n="header_username">Cypher-User</span>
-                    <i class="fas fa-user-circle profile-avatar"></i> 
-                </div>
-            </div>
-        </header>
-
-        <main class="page-content">
-            
-            <h1 class="main-title" data-i18n="page_title_dashboard">Genel Durum Analizi</h1>
-            <p class="text-muted mb-5" data-i18n="dashboard_subtitle">Tüm kritik verilerinizin hızlı bir özeti.</p>
-
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card" data-neon="purple">
-                        <i class="stat-icon fas fa-users"></i>
-                        <div class="stat-info">
-                            <h3 class="stat-value">12,450</h3>
-                            <p class="stat-label" data-i18n="stat_total_users">Toplam Kullanıcı</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card" data-neon="green">
-                        <i class="stat-icon fas fa-shield-alt"></i>
-                        <div class="stat-info">
-                            <h3 class="stat-value">98.5%</h3>
-                            <p class="stat-label" data-i18n="stat_security_score">Güvenlik Skoru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card" data-neon="blue">
-                        <i class="stat-icon fas fa-project-diagram"></i>
-                        <div class="stat-info">
-                            <h3 class="stat-value">45</h3>
-                            <p class="stat-label" data-i18n="stat_active_projects">Aktif Projeler</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card" data-neon="red">
-                        <i class="stat-icon fas fa-bug"></i>
-                        <div class="stat-info">
-                            <h3 class="stat-value">12</h3>
-                            <p class="stat-label" data-i18n="stat_open_issues">Açık Sorunlar</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-8 mb-4">
-                    <div class="stat-card p-4" data-neon="blue">
-                        <h5 class="chart-title" data-i18n="chart_traffic_title">Aylık Ağ Trafiği</h5>
-                        <canvas id="trafficChart" style="max-height: 350px;"></canvas>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 mb-4">
-                    <div class="stat-card p-4" data-neon="purple">
-                        <h5 class="chart-title" data-i18n="chart_status_title">Sistem Durumu</h5>
-                        <canvas id="statusChart" style="max-height: 350px;"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="stat-card p-4" data-neon="green">
-                        <h5 class="chart-title mb-4" data-i18n="table_recent_transactions_title">Son İşlemler</h5>
-                        <div class="table-responsive">
-                            <table class="table cyber-table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th data-i18n="table_header_id">İşlem ID</th>
-                                        <th data-i18n="table_header_type">Tip</th>
-                                        <th data-i18n="table_header_user">Kullanıcı</th>
-                                        <th data-i18n="table_header_amount">Miktar</th>
-                                        <th data-i18n="table_header_date">Tarih</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>TXN-87421</td>
-                                        <td data-i18n="transaction_type_deposit">Yatırma</td>
-                                        <td>Cypher-User-1</td>
-                                        <td>+ $1,200</td>
-                                        <td>2025-10-01</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TXN-87422</td>
-                                        <td data-i18n="transaction_type_transfer">Transfer</td>
-                                        <td>NeonDev</td>
-                                        <td>- $250</td>
-                                        <td>2025-10-01</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TXN-87423</td>
-                                        <td data-i18n="transaction_type_withdrawal">Çekme</td>
-                                        <td>DarkModeFan</td>
-                                        <td>- $50</td>
-                                        <td>2025-09-30</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </main>
-        
-        <footer class="footer">
-            <div class="container-fluid">
-                <p data-i18n="footer_copyright">&copy; 2025 CYBER-DASH. Tüm hakları saklıdır.</p>
-            </div>
-        </footer>
+  <header class="topbar" role="banner">
+    <button id="sidebarToggle" class="menu-btn" aria-label="Menüyü aç/kapat" aria-expanded="false">☰</button>
+    <h1 class="brand">CYBER-DASH</h1>
+    <div class="top-actions" role="navigation">
+      <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Koyu/Aydınlık Mod">🌓</button>
+      <img src="assets/img/avatar-placeholder.png" alt="Kullanıcı Avatarı" class="avatar" />
     </div>
+  </header>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
-    
-    <script src="assets/js/custom.js"></script> 
+  <div class="layout">
+    <nav id="sidebar" class="sidebar" aria-label="Ana Menü">
+      <div class="sidebar-top">
+        <div class="user">Cypher-User</div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="#" class="active" aria-current="page">Dashboard</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Tables</a></li>
+        <li><a href="#">Forms</a></li>
+        <li><a href="#">Components</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
 
-    <script src="assets/js/i18n.js"></script> 
+    <main id="main" class="main" role="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h2 id="hero-title">Genel Durum Analizi</h2>
+        <p class="muted">Tüm kritik verilerinizin hızlı bir özeti.</p>
 
-    <script>
-        var trafficCtx = document.getElementById('trafficChart');
-        if (trafficCtx) {
-            new Chart(trafficCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
-                    datasets: [{
-                        label: 'Gelen Trafik (MB)',
-                        data: [65, 59, 80, 81, 56, 55, 40, 75, 88, 62, 70, 95],
-                        borderColor: 'rgba(54, 162, 235, 1)', 
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        }
+        <div class="cards">
+          <article class="card" aria-labelledby="u-count">
+            <h3 id="u-count">12,450</h3>
+            <p>Toplam Kullanıcı</p>
+          </article>
+          <article class="card" aria-labelledby="s-score">
+            <h3 id<s-score="">98.5%</h3>
+            <p>Güvenlik Skoru</p>
+          </article>
+          <article class="card" aria-labelledby="a-projects">
+            <h3 id="a-projects">45</h3>
+            <p>Aktif Projeler</p>
+          </article>
+          <article class="card" aria-labelledby="open-issues">
+            <h3 id="open-issues">12</h3>
+            <p>Açık Sorunlar</p>
+          </article>
+        </div>
+      </section>
 
-        var statusCtx = document.getElementById('statusChart');
-        if (statusCtx) {
-            new Chart(statusCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['CPU Kullanımı', 'RAM Kullanımı', 'Boş Alan'],
-                    datasets: [{
-                        data: [30, 45, 25], 
-                        backgroundColor: ['#ff6384', '#36a2eb', '#4bc0c0'], 
-                        hoverOffset: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false
-                }
-            });
-        }
-    </script>
-    
+      <section class="table-section" aria-labelledby="transactions-title">
+        <h3 id="transactions-title">Son İşlemler</h3>
+        <div class="table-wrap" role="region" aria-label="Son işlemler tablosu">
+          <table class="table" id="txTable">
+            <thead>
+              <tr>
+                <th scope="col">İşlem ID</th>
+                <th scope="col">Tip</th>
+                <th scope="col">Kullanıcı</th>
+                <th scope="col">Miktar</th>
+                <th scope="col">Tarih</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JavaScript ile burada doldurulacak -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="site-footer" role="contentinfo">
+        <p>© <span id="year"></span> CYBER-DASH. Tüm hakları saklıdır.</p>
+      </footer>
+    </main>
+  </div>
+
+  <noscript>
+    <div class="noscript-warning">JavaScript etkin değil; bazı özellikler çalışmayabilir.</div>
+  </noscript>
+
+  <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>
