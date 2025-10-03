@@ -814,9 +814,15 @@ body.login-page {
     border-color: var(--neon-blue);
 
 }
-/* Dil Seçme Kutusu için ek stil */
-#language-selector {
-    background-color: #333; /* Koyu arka plan rengi */
-    color: #fff; /* Beyaz yazı rengi */
-    border: 1px solid var(--neon-blue); /* Neon çerçeve */
+/* DİL SEÇME MENÜSÜ STİL DÜZELTMESİ (Neon Tema için) */
+.form-select#language-selector {
+    background-color: #1a1a1a !important; /* Koyu arka plan (dark mode) */
+    color: #e0e0e0 !important; /* Açık metin rengi */
+    border: 1px solid #00c7e5 !important; /* Neon mavi çerçeve */
+    box-shadow: 0 0 5px rgba(0, 199, 229, 0.5) !important; /* Neon ışıltısı */
 }
+.form-select#language-selector option {
+    background-color: #1a1a1a; /* Seçenek arka planını da koyu yap */
+    color: #e0e0e0;
+}
+
