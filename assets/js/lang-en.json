@@ -1,8 +1,8 @@
 {
   "menu_dashboard": "Dashboard",
   "menu_tables": "Tables",
-  "menu_settings": "Settings",
-  "menu_forms": "Forms",
-  "menu_components": "Components",
-  "header_profile": "Profile"
+  "settings_language_title": "Language Settings", <--- YENİ EKLENECEK
+  "settings_language_select": "Select Language", <--- YENİ EKLENECEK
+  "button_save": "Save Changes" <--- YENİ EKLENECEK
+  // ... diğer anahtarlar
 }
