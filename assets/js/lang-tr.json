@@ -2,8 +2,11 @@
   "menu_dashboard": "Anasayfa",
   "menu_tables": "Tablolar",
   "menu_settings": "Ayarlar",
-  "menu_forms": "Formlar",
-  "menu_components": "Bileşenler",
-  "header_profile": "Profil"
+  // ... diğer menü anahtarları
+
+  // Ayarlar sayfası için eklediğiniz anahtarlar da burada olmalı:
+  "settings_language_title": "Dil Ayarları",
+  "settings_language_select": "Dili Seçiniz",
+  "button_save": "Değişiklikleri Kaydet",
   "alert_success_lang_change": "Dil başarıyla değiştirildi!"
 }
