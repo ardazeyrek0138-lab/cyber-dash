@@ -3,6 +3,7 @@
   "menu_tables": "Tables",
   "settings_language_title": "Language Settings", <--- YENİ EKLENECEK
   "settings_language_select": "Select Language", <--- YENİ EKLENECEK
-  "button_save": "Save Changes" <--- YENİ EKLENECEK
+  "button_save": "Save Changes" 
+  "alert_success_lang_change": "Language switched successfully!" <--- YENİ EKLENECEK
   // ... diğer anahtarlar
 }
