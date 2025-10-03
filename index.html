@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page_title_dashboard">Dashboard</title>
+    <title data-i18n="page_title_dashboard">CYBER-DASH | Dashboard</title>
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -68,30 +68,92 @@
         </nav>
     </aside>
 
-    <main class="content">
-        <h1 data-i18n="page_title_dashboard">Dashboard Overview</h1>
+    <div id="main-wrapper">
+        
+        <header id="topbar">
+            <button class="cyber-toggle" id="menu-toggle"> 
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Cyber-Dash'te arama yapın..." class="search-input" data-i18n-placeholder="header_search_placeholder"> 
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <div class="header-actions">
+                <a href="#" class="action-item" data-count="3"><i class="fas fa-bell"></i></a>
+                <a href="#" class="action-item" data-count="1"><i class="fas fa-envelope"></i></a>
+                
+                <div class="user-profile">
+                    <span class="user-name" data-i18n="header_username">Cypher-User</span>
+                    <i class="fas fa-user-circle profile-avatar"></i> 
+                </div>
+            </div>
+        </header>
 
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title" data-i18n="card_realtime_users">Real-Time Users</h5>
-                        <p class="card-text">1,450</p>
-                        <p class="text-success" data-i18n="card_text_increase">+15% since last week</p>
+        <main class="page-content">
+            <h1 class="main-title" data-i18n="page_title_dashboard">Dashboard Overview</h1>
+            <p class="text-muted mb-5" data-i18n="dashboard_subtitle">Kritik sistem metriklerine ve güncel duruma genel bakış.</p>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card p-4" data-neon="blue">
+                        <h5 class="chart-title mb-2" data-i18n="card_realtime_users">Real-Time Users</h5>
+                        <div class="stat-value">1,450</div>
+                        <p class="text-success stat-change" data-i18n="card_text_increase">+15% since last week</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card p-4" data-neon="purple">
+                        <h5 class="chart-title mb-2" data-i18n="card_total_sales">Total Sales</h5>
+                        <div class="stat-value">$125,890</div>
+                        <p class="text-danger stat-change" data-i18n="card_text_decrease">-5% from last month</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card p-4" data-neon="green">
+                        <h5 class="chart-title mb-2" data-i18n="card_new_registrations">New Registrations</h5>
+                        <div class="stat-value">3,204</div>
+                        <p class="text-success stat-change" data-i18n="card_text_new">+250 today</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card p-4" data-neon="red">
+                        <h5 class="chart-title mb-2" data-i18n="card_server_load">Server Load</h5>
+                        <div class="stat-value">78%</div>
+                        <p class="text-warning stat-change" data-i18n="card_text_warning">High usage peak</p>
                     </div>
                 </div>
             </div>
-            
-            </div>
-        
-    </main>
-</div>
 
-<footer class="footer">
-    <div class="container-fluid">
-        <p data-i18n="footer_copyright">&copy; 2025 CYBER-DASH. All rights reserved.</p>
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="stat-card p-4" data-neon="blue">
+                        <h5 class="chart-title mb-4" data-i18n="chart_title_activity">Monthly Activity Analysis</h5>
+                        <canvas id="monthlyActivityChart" height="150"></canvas>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="stat-card p-4" data-neon="purple">
+                        <h5 class="chart-title mb-4" data-i18n="chart_title_traffic">Traffic Source</h5>
+                        <canvas id="trafficSourceChart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        
+        <footer class="footer">
+            <div class="container-fluid">
+                <p data-i18n="footer_copyright">&copy; 2025 CYBER-DASH. Tüm hakları saklıdır.</p>
+            </div>
+        </footer>
     </div>
-</footer>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
