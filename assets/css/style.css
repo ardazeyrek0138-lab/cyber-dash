@@ -841,5 +841,194 @@ body.login-page {
     background-color: #1a1a1a;
     color: #00c7e5;
 }
+/* ========================================= */
+/* 1. ANA DÜZEN VE YAPISAL CSS */
+/* ========================================= */
+
+body {
+    /* Genel koyu temayı sağlamak için */
+    background-color: #0d1117; 
+    color: #e6edf3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex; /* Ana yapının düzenlenmesi için */
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#main-wrapper {
+    flex-grow: 1;
+    transition: margin-left 0.3s;
+    padding-top: 60px; /* Topbar yüksekliği */
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex-grow: 1;
+    padding: 20px 30px;
+}
+
+/* ========================================= */
+/* 2. SIDEBAR (YAN MENÜ) DÜZENLEMELERİ */
+/* (Menü açma/kapama ve active class sorununu çözer) */
+/* ========================================= */
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #161b22; /* Koyu arka plan */
+    color: #fff;
+    transition: all 0.3s;
+    position: fixed;
+    height: 100%;
+    z-index: 1030; /* Topbar'dan az daha düşük */
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 20px 20px;
+    border-bottom: 1px solid #21262d;
+}
+
+.brand-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(54, 162, 235, 0.5); /* Hafif neon gölge */
+}
+
+.brand-icon {
+    color: #36a2eb; /* Mavi Neon rengi */
+    margin-right: 10px;
+}
+
+/* Navigasyon Linkleri */
+.sidebar-nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav .nav-item {
+    margin: 5px 0;
+}
+
+.sidebar-nav .nav-link {
+    padding: 10px 20px;
+    color: #e6edf3;
+    display: block;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+/* HOVER Etkisi */
+.sidebar-nav .nav-link:hover {
+    background: rgba(22, 27, 34, 0.8);
+    color: #36a2eb; /* Mavi Neon */
+    border-left: 3px solid #36a2eb;
+}
+
+/* ACTIVE Etkisi (Mevcut Sayfa) */
+.sidebar-nav .nav-item.active .nav-link {
+    color: #36a2eb; /* Mavi Neon */
+    background: rgba(54, 162, 235, 0.1);
+    border-left: 3px solid #36a2eb;
+    font-weight: 600;
+    box-shadow: inset 0 0 10px rgba(54, 162, 235, 0.2); /* İçeriden hafif parıltı */
+}
+
+.sidebar-nav .nav-link i {
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+
+/* ========================================= */
+/* 3. TOPBAR (ÜST ÇUBUK) STİLLERİ */
+/* ========================================= */
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Sidebar genişliği kadar içeriden başla */
+    right: 0;
+    height: 60px;
+    background: #161b22;
+    border-bottom: 1px solid #21262d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1031;
+    transition: left 0.3s;
+}
+
+/* Menu Toggle Butonu */
+.cyber-toggle {
+    background: none;
+    border: none;
+    color: #36a2eb;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: color 0.2s;
+}
+.cyber-toggle:hover {
+    color: #ff6384;
+}
+
+/* ========================================= */
+/* 4. GENEL TEMA VE KOMPONENT UYARLAMALARI */
+/* ========================================= */
+
+/* Ana Başlık */
+.main-title {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    font-weight: 300;
+}
+
+/* Kart Başlıkları (Stat Card ve Chart Title) */
+.stat-card .chart-title {
+    color: #fff;
+    font-weight: 500;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+/* Durum Rozetleri (Tablo İçin) */
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.status-badge.active {
+    background-color: rgba(75, 192, 192, 0.2); /* Yeşil tonu */
+    color: #4bc0c0;
+}
+.status-badge.pending {
+    background-color: rgba(255, 205, 86, 0.2); /* Sarı tonu */
+    color: #ffcd56;
+}
+.status-badge.inactive {
+    background-color: rgba(255, 99, 132, 0.2); /* Kırmızı tonu */
+    color: #ff6384;
+}
+
+/* Aksiyon Linkleri (Tablo Düzenle) */
+.action-edit {
+    color: #36a2eb;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.action-edit:hover {
+    color: #ffcd56;
+}
 
 
