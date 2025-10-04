@@ -4,20 +4,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const mainWrapper = document.getElementById('main-wrapper');
 
   if (menuToggle && sidebar && mainWrapper) {
-    menuToggle.addEventListener('click', function () {
+    menuToggle.addEventListener('click', function (e) {
+      e.preventDefault();
       sidebar.classList.toggle('toggled');
       mainWrapper.classList.toggle('sidebar-toggled');
     });
   }
 
+  // Aktif sayfayı vurgula
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navItems = document.querySelectorAll('#sidebar .nav-item');
-  navItems.forEach(item => {
-    const page = item.getAttribute('data-page');
-    if (page === currentPage) {
-      item.classList.add('active');
+  const navLinks = document.querySelectorAll('#sidebar .nav-link');
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+      link.classList.add('active');
     } else {
-      item.classList.remove('active');
+      link.classList.remove('active');
     }
   });
 });
