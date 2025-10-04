@@ -1,21 +1,37 @@
-const i18nElements = document.querySelectorAll('[data-i18n]');
-const langSwitcher = document.getElementById('langSwitcher');
+let currentLang = 'en';
 
-async function loadLang(lang) {
-  const res = await fetch(`assets/js/lang-${lang}.json`);
-  const dict = await res.json();
+async function loadTranslations(lang) {
+  const response = await fetch(`assets/js/lang-${lang}.json`);
+  return await response.json();
+}
 
-  i18nElements.forEach(el => {
+function applyTranslations(translations) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if(dict[key]) el.textContent = dict[key];
+    if (translations[key]) {
+      if (el.tagName === 'INPUT' && el.hasAttribute('data-i18n-placeholder')) {
+        el.placeholder = translations[key];
+      } else if (el.hasAttribute('data-i18n-title')) {
+        el.title = translations[key];
+      } else {
+        el.textContent = translations[key];
+      }
+    }
   });
 }
 
-if(langSwitcher){
-  langSwitcher.addEventListener('change', e => {
-    loadLang(e.target.value);
-  });
-}
+document.addEventListener('click', async (e) => {
+  if (e.target.classList.contains('lang-btn')) {
+    const lang = e.target.getAttribute('data-lang');
+    currentLang = lang;
+    const translations = await loadTranslations(lang);
+    applyTranslations(translations);
+    localStorage.setItem('preferredLang', lang);
+  }
+});
 
-// Load default language
-loadLang('en');
+document.addEventListener('DOMContentLoaded', async () => {
+  currentLang = localStorage.getItem('preferredLang') || 'en';
+  const translations = await loadTranslations(currentLang);
+  applyTranslations(translations);
+});
