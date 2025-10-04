@@ -1,14 +1,23 @@
-// Update year
-document.addEventListener('DOMContentLoaded', () => {
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-});
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const mainWrapper = document.getElementById('main-wrapper');
 
-// Dark mode toggle
-const darkToggle = document.getElementById('darkToggle');
-if(darkToggle){
-  darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    darkToggle.setAttribute('aria-pressed', document.body.classList.contains('dark-mode'));
+  if (menuToggle && sidebar && mainWrapper) {
+    menuToggle.addEventListener('click', function () {
+      sidebar.classList.toggle('toggled');
+      mainWrapper.classList.toggle('sidebar-toggled');
+    });
+  }
+
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navItems = document.querySelectorAll('#sidebar .nav-item');
+  navItems.forEach(item => {
+    const page = item.getAttribute('data-page');
+    if (page === currentPage) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
   });
-}
+});
