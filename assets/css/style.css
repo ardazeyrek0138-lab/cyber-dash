@@ -1,3 +1,4 @@
+/* CYBER-DASH - Neon Dark Theme */
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +28,7 @@ body {
   top: 6px;
 }
 
+/* Sidebar */
 #sidebar {
   position: fixed;
   top: 0;
@@ -40,10 +42,6 @@ body {
   overflow-y: auto;
 }
 
-#sidebar.toggled {
-  transform: translateX(-250px);
-}
-
 #sidebar .nav-brand {
   padding: 20px;
   font-size: 1.5rem;
@@ -52,39 +50,31 @@ body {
   border-bottom: 1px solid #2a2a4a;
 }
 
-#sidebar .nav-list {
-  list-style: none;
-  padding: 0;
-}
-
-#sidebar .nav-item {
+.nav-link {
+  display: block;
   padding: 12px 20px;
-  cursor: pointer;
-  transition: background 0.2s;
   color: inherit;
   text-decoration: none;
-  display: block;
+  transition: background 0.2s;
 }
 
-#sidebar .nav-item:hover {
+.nav-link:hover {
   background: #1e1e36;
 }
 
-#sidebar .nav-item.active {
+.nav-link.active {
   background: #2a2a4a;
   color: #ffffff;
   font-weight: bold;
 }
 
+/* Main Wrapper */
 #main-wrapper {
   margin-left: 250px;
   transition: margin-left 0.3s ease;
 }
 
-#main-wrapper.sidebar-toggled {
-  margin-left: 0;
-}
-
+/* Topbar */
 #topbar {
   position: sticky;
   top: 0;
@@ -119,6 +109,7 @@ body {
   background: #3a3a5a;
 }
 
+/* Cards & Buttons */
 .card {
   background: #1a1a2e;
   border: 1px solid #3a3a5a;
@@ -143,23 +134,48 @@ body {
   cursor: pointer;
 }
 
+/* Forms */
 .form-label {
   color: #a0a0ff;
   margin-bottom: 6px;
+  display: block;
 }
 
 .form-control {
   background: #1a1a2e;
   border: 1px solid #3a3a5a;
   color: #e0e0ff;
+  padding: 8px 12px;
   margin-bottom: 16px;
+  width: 100%;
+  border-radius: 4px;
 }
 
+/* Tables */
+.table {
+  color: #e0e0ff;
+  background: #1a1a2e;
+}
+.table th,
+.table td {
+  border-color: #3a3a5a;
+}
+
+/* Responsive: Mobilde Sidebar Gizle */
 @media (max-width: 768px) {
   #sidebar {
     transform: translateX(-250px);
   }
+
+  #sidebar.toggled {
+    transform: translateX(0);
+  }
+
   #main-wrapper {
     margin-left: 0;
+  }
+
+  #main-wrapper.sidebar-toggled {
+    margin-left: 250px;
   }
 }
